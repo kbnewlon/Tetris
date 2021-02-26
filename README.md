@@ -1,7 +1,7 @@
 # Tetris
 
-![issues](https://img.shields.io/github/issues/kbnewlon/tetris)
-![GitHub top language](https://img.shields.io/github/languages/top/kbnewlon/tetris)
+![issues](https://img.shields.io/github/issues/kbnewlon/Tetris)
+![GitHub top language](https://img.shields.io/github/languages/top/kbnewlon/Tetris)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   
 ## Description 
@@ -41,7 +41,7 @@ N/A
 
 
 ## Links
-To Repo: https://github.com/kbnewlon/tetris<br>
+To Repo: https://github.com/kbnewlon/Tetris<br>
 How to Build Tetris in React - GameDev Tutorial with React Hooks: https://youtu.be/ZGOaCxX8HIU
  
 
