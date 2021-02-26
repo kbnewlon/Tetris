@@ -10,7 +10,7 @@ import StartButton from './StartButton'
 const Tetris = () => {
     return (
         <div>
-            <Stage state={createStage{}} />
+            <Stage stage={createStage} />
             <aside>
                 <div>
                     <Display text="Score" />
