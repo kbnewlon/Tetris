@@ -5,8 +5,24 @@ import { createStage } from '../gameHelpers';
 
 export const useStage = (player, resetPlayer) => {
     const [stage, setStage] = useState(createStage());
+    const [rowsCleared, setRowsCleared] = useState(0);
 
     useEffect(() => {
+        setRowsCleared(0);
+
+        // checks to see if there is a complete row and then it adds an empty clear row at the top
+        const sweepRows = newStage =>
+        newStage.reduce((ack, row) => {
+            if(row.findIndex(cell => cell[0] === 0) === -1){
+                setRowsCleared(prev => prev + 1)
+                ack.unshift(new Array(newStage[0].length).fill([0, 'clear']))
+                return ack;
+            }
+            ack.push(row)
+            return ack;
+        }, [])
+
+
         const updateStage = prevState => {
             //First have to clear the stage
             const newStage = prevState.map(row =>
@@ -27,6 +43,7 @@ export const useStage = (player, resetPlayer) => {
             //check if collided 
             if (player.collided) {
                 resetPlayer();
+                return sweepRows(newStage)
             }
             return newStage;
         }
@@ -35,5 +52,5 @@ export const useStage = (player, resetPlayer) => {
     }, [player, resetPlayer])
 
 
-    return [stage, setStage];
+    return [stage, setStage, rowsCleared];
 }
