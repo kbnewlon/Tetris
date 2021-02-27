@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { StyledCell } from './styles/StyledCell';
 import { TETROMINOS } from '../tetrominos';
  
@@ -8,5 +8,5 @@ const Cell = ({ type }) => {
         
     )
 }
-
-export default Cell
+// React.memo takes out the extra 240 renders
+export default React.memo(Cell);
